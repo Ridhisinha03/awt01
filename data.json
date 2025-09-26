@@ -4,30 +4,35 @@
       "name": "class",
       "subfolders": [
         {
-          "name": "Angular js",
+          "name": "ANGULARJS",
           "files": [
-            { "name": "angular expression", "path": "class/Angular/angular_expression.html" },
-            { "name": "ng-bind example", "path": "class/Angular/ng-bind.html" }
+            { "name": "click.html", "path": "ANGULARJS/click.html" },
+            { "name": "index.html", "path": "ANGULARJS/index.html" },
+            { "name": "index2.html", "path": "ANGULARJS/index2.html" },
+            { "name": "index3.html", "path": "ANGULARJS/index3.html" }
           ]
         },
         {
-          "name": "Jquery",
-          "files": [
-            { "name": "Task 1", "path": "class/Jquery/Task 1/task1.html" },
-            { "name": "Local Example", "path": "class/Jquery/Task 2/local.html" },
-            { "name": "Remote Example", "path": "class/Jquery/Task 2/remote.html" }
-          ]
-        }
+      "name": "Jquery",
+      "files": [
+        { "name": "Task 1", "path": "class/Jquery/Task1/task1.html" },
+        { "name": "Local Example", "path": "class/Jquery/Task2/local.html" },
+        { "name": "Remote Example", "path": "class/Jquery/Task2/remote.html" },
+        { "name": "todo Example", "path": "class/Jquery/Task3/todo.html" }
+     ]
+   }
+
       ]
     },
     {
       "name": "Lab Experiments",
       "files": [
-        { "name": "Experiment 1", "path": "lab/Experiment_1/index.html" },
-        { "name": "Experiment 2", "path": "lab/Experiment_2/index.html" },
-        { "name": "Experiment 3", "path": "lab/Experiment_3/index.html" },
-        { "name": "Experiment 4 - Bill", "path": "lab/Experiment_4/bill.html" },
-        { "name": "Experiment 4 - Form", "path": "lab/Experiment_4/form.html" }
+        { "name": "experiment1", "path": "lab/Experiment1/index.html" },
+        { "name": "experiment2", "path": "lab/Experiment2/index.html" },
+        { "name": "experiment3", "path": "lab/Experiment3/index.html" },
+        { "name": "experiment4 - bill", "path": "lab/Experiment4/bill.html" },
+        { "name": "experiment4 - form", "path": "lab/Experiment4/form.html" },
+        { "name": "experiment5 - nodetest", "path": "lab/Experiment5/index.html" }
       ]
     }
   ]
