@@ -212,7 +212,7 @@ body {
         }
 ```
 ### output
-![output screenshot](output-ss-lab/exp-1.png)
+![output screenshot](output-ss/exp-1.png)
 **Challenges faced:**
 - Managing proper linking of files.
 - Debugging minor syntax issues in CSS and JS.
@@ -333,7 +333,7 @@ button {
 ```
 
 ## output
-![output screenshot](output-ss-lab/exp-2.png)
+![output screenshot](output-ss/exp-2.png)
 
 
 **Challenges faced:**
@@ -452,7 +452,7 @@ angular.module('tableApp', [])
   ```
 
 ## output
-![output screenshot](output-ss-lab/exp-3.png)
+![output screenshot](output-ss/exp-3.png)
 
 **Challenges faced:**
 - Debugging logic errors and managing functions.
@@ -638,9 +638,9 @@ angular.module('tableApp', [])
 ```
 
 ## output
-![output screenshot](output-ss-lab/exp-4bill.png)
+![output screenshot](output-ss/exp-4bill.png)
 ## output
-![output screenshot](output-ss-lab/exp-4form.png)
+![output screenshot](output-ss/exp-4form.png)
 
 **Challenges faced:**
 - Handling form validation without libraries.
@@ -786,13 +786,13 @@ app.listen(port, () => {
 - Setting up dependencies correctly in `package.json`.
 
 ## output
-![output screenshot](output-ss-lab/exp-6array.png)
+![output screenshot](output-ss/exp-6array.png)
 ## output
-![output screenshot](output-ss-lab/exp-6calculate.png)
+![output screenshot](output-ss/exp-6calculate.png)
 ## output
-![output screenshot](output-ss-lab/exp-6hello.png)
+![output screenshot](output-ss/exp-6hello.png)
 ## output
-![output screenshot](output-ss-lab/exp-6replace.png)
+![output screenshot](output-ss/exp-6replace.png)
 
 
 ---
@@ -880,15 +880,15 @@ app.listen(PORT, () => {
 });
 ```
 ## output
-![output screenshot](output-ss-lab/exp-7cokkie.delete.jpg)
+![output screenshot](output-ss/exp-7cokkie.delete.jpg)
 ## output
-![output screenshot](output-ss-lab/exp-7cokkie.jhon.jpg)
+![output screenshot](output-ss/exp-7cokkie.jhon.jpg)
 ## output
-![output screenshot](output-ss-lab/exp-7cokkie.set.jpg)
+![output screenshot](output-ss/exp-7cokkie.set.jpg)
 ## output
-![output screenshot](output-ss-lab/exp-7session.welcome.jpg)
+![output screenshot](output-ss/exp-7session.welcome.jpg)
 ## output
-![output screenshot](output-ss-lab/exp-7session.welcome2.jpg)
+![output screenshot](output-ss/exp-7session.welcome2.jpg)
 
 
 
