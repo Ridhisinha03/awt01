@@ -211,6 +211,8 @@ body {
             box-shadow: 0 4px 6px black;
         }
 ```
+### output
+![output screenshot](output-ss-lab/exp-1.png)
 **Challenges faced:**
 - Managing proper linking of files.
 - Debugging minor syntax issues in CSS and JS.
@@ -330,6 +332,9 @@ button {
 }
 ```
 
+## output
+![output screenshot](output-ss-lab/exp-2.png)
+
 
 **Challenges faced:**
 - Understanding how DOM updates reflect dynamically.
@@ -445,6 +450,9 @@ angular.module('tableApp', [])
     vm.reverse = false;
   });
   ```
+
+## output
+![output screenshot](output-ss-lab/exp-3.png)
 
 **Challenges faced:**
 - Debugging logic errors and managing functions.
@@ -629,6 +637,11 @@ angular.module('tableApp', [])
 </html>
 ```
 
+## output
+![output screenshot](output-ss-lab/exp-4bill.png)
+## output
+![output screenshot](output-ss-lab/exp-4form.png)
+
 **Challenges faced:**
 - Handling form validation without libraries.
 - Designing responsive form layouts.
@@ -772,6 +785,16 @@ app.listen(port, () => {
 - Understanding middleware and routing concepts.
 - Setting up dependencies correctly in `package.json`.
 
+## output
+![output screenshot](output-ss-lab/exp-6array.png)
+## output
+![output screenshot](output-ss-lab/exp-6calculate.png)
+## output
+![output screenshot](output-ss-lab/exp-6hello.png)
+## output
+![output screenshot](output-ss-lab/exp-6replace.png)
+
+
 ---
 
 ### 🔹 **Experiment 7 – Cookies and Sessions**
@@ -856,6 +879,18 @@ app.listen(PORT, () => {
     console.log(`Server started on http://localhost:${PORT}`);
 });
 ```
+## output
+![output screenshot](output-ss-lab/exp-7cokkie.delete.jpg)
+## output
+![output screenshot](output-ss-lab/exp-7cokkie.jhon.jpg)
+## output
+![output screenshot](output-ss-lab/exp-7cokkie.set.jpg)
+## output
+![output screenshot](output-ss-lab/exp-7session.welcome.jpg)
+## output
+![output screenshot](output-ss-lab/exp-7session.welcome2.jpg)
+
+
 
 
 **Challenges faced:**
