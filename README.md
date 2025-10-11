@@ -116,7 +116,6 @@ $(document).on("keydown", function(e) {
 
         });
 ```
-
 ### s.css
 ```css
 body {
@@ -163,9 +162,6 @@ body {
             height: 50px;
             cursor: pointer;
             border: 2px solid beige;
-            border-radius: 50%;
-            background-color: powderblue;
-            box-shadow: 0 4px 6px black;
         }body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -228,6 +224,112 @@ body {
 - Understanding traversal methods like `parent()`, `children()`, and `find()`.
 
 
+**code**
+## index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab exp 2</title>
+  <link rel="stylesheet" href="s.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Add a class to an element</h1>
+    <button id="addbtn">Add border</button>
+    <p id="adclass">Click the button to add a border to me</p>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h1>Access element's position</h1>
+    <button id="getposition">Get position</button>
+    <div id="result"></div>
+    <div id="pele">This is the positioned element</div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <h1>Animate multiple CSS properties</h1>
+    <button id="animatebtn">Animate box</button>
+    <div id="animatedBox"></div>
+  </div>
+
+  <script src="d2.js"></script>
+</body>
+</html>
+```
+
+### D2.js
+```js
+$(document).ready(function(){
+      $("#addbtn").click(function(){
+        $("#adclass").addClass("highlighted");
+      });
+
+      $("#getposition").click(function(){
+        var position = $("#pele").position();
+        var res = "Top: " + position.top + "px, Left: " + position.left + "px";
+        $("#result").text(res);
+      });
+
+      $("#animatebtn").click(function(){
+        $("#animatedBox").animate({
+          width: '200px',
+          height: '200px',
+          opacity: 0.5,
+          marginLeft: '50px'
+        }, 1000, function() {
+          $(this).animate({
+            width: '100px',
+            height: '100px',
+            opacity: 1,
+            marginLeft: '0px'
+          }, 1000);
+        });
+      });
+    });
+```
+
+### s.css
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding-bottom: 1500px;
+}
+.container {
+  margin-bottom: 40px;
+}
+h1 {
+  color: #333;
+}
+.highlighted {
+  border: 5px solid #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+#animatedBox {
+  width: 100px;
+  height: 100px;
+  background-color: #ff9800;
+  position: relative;
+}
+button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+}
+```
+
 
 **Challenges faced:**
 - Understanding how DOM updates reflect dynamically.
@@ -241,6 +343,109 @@ body {
 - Handling user input and updating the UI.
 - Understanding basic app logic and modular code.
 
+**code**
+
+## index.html
+```html
+<!doctype html>
+<html ng-app="tableApp">
+<head>
+  <meta charset="utf-8">
+  <title>Experiment 3 - AngularJS Tables</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="app.js"></script>
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    tr.even { background: #f8f8f8; }
+    tr.odd { background: #ffffff; }
+    th { background: #eee; }
+  </style>
+</head>
+<body ng-controller="TableController as ctrl">
+  <div class="container">
+    <h1>AngularJS Table Examples</h1>
+
+    <section>
+      <h2>1. Display a Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="student in ctrl.students track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
+            <td>{{$index + 1}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.dept}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>2. Display contents with orderBy filter</h2>
+      <label>Sort by:
+        <select ng-model="ctrl.sortKey">
+          <option value="name">Name</option>
+          <option value="age">Age</option>
+          <option value="dept">Department</option>
+        </select>
+        <label><input type="checkbox" ng-model="ctrl.reverse"> Reverse</label>
+      </label>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="student in ctrl.students | orderBy:ctrl.sortKey:ctrl.reverse track by $index" ng-class-even="'even'" ng-class-odd="'odd'">
+            <td>{{$index + 1}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.dept}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. Display Table with even and odd rows (styling already shown)</h2>
+      <p>Notice rows have alternating backgrounds using <code>ng-class-even</code> and <code>ng-class-odd</code>.</p>
+    </section>
+  </div>
+</body>
+</html>
+```
+## app.js
+```js
+angular.module('tableApp', [])
+  .controller('TableController', function() {
+    const vm = this;
+
+    vm.students = [
+      { name: 'Asha', age: 22, dept: 'CSE' },
+      { name: 'Bikram', age: 24, dept: 'ECE' },
+      { name: 'Charu', age: 21, dept: 'ME' },
+      { name: 'Deep', age: 23, dept: 'CSE' },
+      { name: 'Esha', age: 20, dept: 'EE' }
+    ];
+
+    vm.sortKey = 'name';
+    vm.reverse = false;
+  });
+  ```
+
 **Challenges faced:**
 - Debugging logic errors and managing functions.
 - Keeping the code reusable and readable.
@@ -252,6 +457,177 @@ body {
 - Creating and validating HTML forms.
 - Structuring a billing page layout.
 - Collecting and displaying user data effectively.
+
+**code**
+
+## bill.html
+```html
+<!DOCTYPE html>
+<html lang="en" ng-app="billApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Bill Payment Record</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #eee; }
+    input, button { margin: 5px; padding: 6px; }
+  </style>
+</head>
+<body ng-controller="BillController">
+
+  <h2>Bill Payment Record</h2>
+
+  <!-- Form to add new records -->
+  <form name="billForm" ng-submit="addRecord(billForm)" novalidate>
+    <label>
+      Name:
+      <input type="text" name="name" ng-model="newRecord.name" required>
+    </label>
+    <label>
+      Amount:
+      <input type="number" name="amount" ng-model="newRecord.amount" required min="0">
+    </label>
+    <label>
+      Date:
+      <input type="date" name="date" ng-model="newRecord.date" required>
+    </label>
+    <button type="submit" ng-disabled="billForm.$invalid">Add</button>
+  </form>
+
+  <!-- Records table -->
+  <table ng-if="records.length > 0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="record in records track by record.id">
+        <td>{{$index + 1}}</td>
+        <td>{{record.name}}</td>
+        <td>{{record.amount | currency}}</td>
+        <td>{{record.date | date:'mediumDate'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    angular.module('billApp', [])
+      .controller('BillController', function($scope) {
+        // Initial records
+        $scope.records = [
+          { id: 1, name: 'Electricity', amount: 1200, date: '2025-07-01' },
+          { id: 2, name: 'Internet', amount: 799, date: '2025-07-05' }
+        ];
+
+        $scope.newRecord = {};
+
+        // Add new record
+        $scope.addRecord = function(form) {
+          if (form.$valid) {
+            let newId = $scope.records.length + 1;
+            $scope.records.push({
+              id: newId,
+              name: $scope.newRecord.name,
+              amount: $scope.newRecord.amount,
+              date: $scope.newRecord.date
+            });
+            $scope.newRecord = {};
+            form.$setPristine();
+            form.$setUntouched();
+          }
+        };
+      });
+  </script>
+</body>
+</html>
+```
+
+## form.html
+```html
+<!DOCTYPE html>
+<html lang="en" ng-app="formApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Registration Form</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+
+  <style>
+    .error { color: red; font-size: 14px; }
+    input.ng-invalid.ng-touched { border: 2px solid red; }
+    input.ng-valid.ng-touched { border: 2px solid green; }
+    .success { color: green; margin-top: 10px; }
+  </style>
+
+</head>
+
+<body ng-controller="FormController">
+
+  <h2>User Registration</h2>
+  <form name="regForm" novalidate ng-submit="register(regForm)">
+    <label>Name:
+      <input type="text" name="name" ng-model="user.name" required ng-minlength="3">
+    </label>
+    <div class="error" 
+         ng-show="(regForm.name.$touched || submitted) && regForm.name.$invalid">
+      Name must be at least 3 characters.
+    </div>
+    <br><br>
+
+    <label>Email:
+      <input type="email" name="email" ng-model="user.email" required>
+    </label>
+    <div class="error" 
+         ng-show="(regForm.email.$touched || submitted) && regForm.email.$invalid">
+      Enter a valid email.
+    </div>
+    <br><br>
+
+    <label>Password:
+      <input type="password" name="password" ng-model="user.password" required ng-minlength="6">
+    </label>
+    <div class="error" 
+         ng-show="(regForm.password.$touched || submitted) && regForm.password.$invalid">
+      Password must be at least 6 characters.
+    </div>
+    <br><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <p class="success" ng-if="success">{{success}}</p>
+
+  <script>
+    angular.module('formApp', [])
+      .controller('FormController', function($scope) {
+        $scope.user = {};
+        $scope.submitted = false;
+        $scope.success = '';
+
+        $scope.register = function(form) {
+          if (form.$valid) {
+            // In real app, send data to server
+            $scope.success = 'Registration successful for ' + $scope.user.name;
+            $scope.user = {};
+            form.$setPristine();  // Reset form state
+            form.$setUntouched(); // Reset touched state
+            $scope.submitted = false;
+          } else {
+            $scope.success = '';
+            $scope.submitted = true; // Show validation messages
+          }
+        };
+      });
+  </script>
+</body>
+</html>
+```
 
 **Challenges faced:**
 - Handling form validation without libraries.
@@ -277,6 +653,121 @@ body {
 - Installing and using packages like Express.
 - Handling HTTP requests and responses efficiently.
 
+**code**
+## pacage.json
+```json
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "testing nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "awt01"
+  },
+  "keywords": [
+    "[\"nodejs\"",
+    "\"express\"",
+    "\"lab\""
+  ],
+  "author": "ridhi",
+  "license": "ISC"
+}
+```
+## server.js
+```js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Hello World endpoint
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+// String replacement endpoint
+app.get('/replace', (req, res) => {
+  const { text } = req.query;
+  if (!text) {
+    return res.status(400).json({ error: 'Text parameter is required' });
+  }
+
+  const regex = /a{2,}/g;
+  const result = text.replace(regex, 'b');
+  res.json({ original: text, replaced: result });
+});
+
+// Calculator endpoint
+app.get('/calculate', (req, res) => {
+  const { operation, num1, num2 } = req.query;
+  const n1 = parseFloat(num1);
+  const n2 = parseFloat(num2);
+
+  if (isNaN(n1) || isNaN(n2)) {
+    return res.status(400).json({ error: 'Invalid numbers provided' });
+  }
+
+  let result;
+  switch (operation) {
+    case 'add':
+      result = n1 + n2;
+      break;
+    case 'subtract':
+      result = n1 - n2;
+      break;
+    case 'multiply':
+      result = n1 * n2;
+      break;
+    case 'divide':
+      result = n2 !== 0 ? n1 / n2 : 'Error: Division by zero';
+      break;
+    default:
+      return res.status(400).json({ error: 'Invalid operation. Use add, subtract, multiply, or divide' });
+  }
+
+  res.json({ operation, num1: n1, num2: n2, result });
+});
+
+// Array iteration endpoint
+app.get('/iterate', (req, res) => {
+  const array = [10, 20, 30, 40, 50];
+  const iterations = [];
+
+  // Using for loop
+  iterations.push("Using for loop:");
+  for (let i = 0; i < array.length; i++) {
+    iterations.push(`Index ${i}: ${array[i]}`);
+  }
+
+  // Using forEach
+  iterations.push("Using forEach:");
+  array.forEach((item, index) => {
+    iterations.push(`Index ${index}: ${item}`);
+  });
+
+  // Using for...of
+  iterations.push("Using for...of:");
+  for (const item of array) {
+    iterations.push(`Item: ${item}`);
+  }
+
+  res.json({ array, iterations });
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+  console.log('Available endpoints:');
+  console.log('  GET / - Hello World');
+  console.log('  GET /replace?text=your_text - Replace multiple a\'s with b');
+  console.log('  GET /calculate?operation=add&num1=5&num2=3 - Calculator');
+  console.log('  GET /iterate - Array iteration examples');
+});
+```
+
 **Challenges faced:**
 - Understanding middleware and routing concepts.
 - Setting up dependencies correctly in `package.json`.
@@ -288,6 +779,84 @@ body {
 - Storing and managing cookies in Node.js.
 - Using sessions for authentication or tracking.
 - Understanding client-server state management.
+   
+
+***code***
+
+## cookie-example.js
+```js
+const express = require('express');
+const cookieParser = require('cookie-parser');
+
+const app = express();
+app.use(cookieParser());
+
+// Set cookie
+app.get('/set-cookie', (req, res) => {
+    res.cookie('username', 'JohnDoe', { maxAge: 900000 });
+    res.send('Cookie has been set');
+});
+
+// Get cookie
+app.get('/get-cookie', (req, res) => {
+    const user = req.cookies['username'];
+    res.send(`Cookie Retrieved: ${user}`);
+});
+
+// Delete cookie
+app.get('/delete-cookie', (req, res) => {
+    res.clearCookie('username');
+    res.send('Cookie deleted');
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server started on http://localhost:${PORT}`);
+});
+```
+## session-example.js
+```js
+const express = require('express');
+const session = require('express-session');
+
+const app = express();
+
+// Configure session middleware
+app.use(session({
+    secret: 'mysecretkey',
+    resave: false,
+    saveUninitialized: true
+}));
+
+// Root route
+app.get('/', (req, res) => {
+    if (req.session.views) {
+        req.session.views++;
+        res.send(`Welcome back! You visited ${req.session.views} times.`);
+    } else {
+        req.session.views = 1;
+        res.send('Welcome to the session demo. Refresh to count visits.');
+    }
+});
+
+// Destroy session
+app.get('/destroy', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.send('Error destroying session');
+        }
+        res.send('Session destroyed');
+    });
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server started on http://localhost:${PORT}`);
+});
+```
+
 
 **Challenges faced:**
 - Handling cookie expiration and security flags.
