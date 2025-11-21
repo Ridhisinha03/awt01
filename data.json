@@ -33,7 +33,7 @@
         { "name": "experiment4 - bill", "path": "lab/Experiment4/bill.html" },
         { "name": "experiment4 - form", "path": "lab/Experiment4/form.html" },
         { "name": "experiment5 - nodetest", "path": "lab/Experiment5/index.html" },
-        { "name": "experiment5 - nodetest", "path": "todo app/server.js" }
+        { "name": "Todo-app", "path": "todo app/server.js" }
       ]
     }
   ]
