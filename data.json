@@ -6,10 +6,10 @@
         {
           "name": "ANGULARJS",
           "files": [
-            { "name": "click.html", "path": "ANGULARJS/click.html" },
-            { "name": "index.html", "path": "ANGULARJS/index.html" },
-            { "name": "index2.html", "path": "ANGULARJS/index2.html" },
-            { "name": "index3.html", "path": "ANGULARJS/index3.html" }
+            { "name": "click.html", "path": "awt01/class/ANGULARJS/click.html" },
+            { "name": "index.html", "path": "awt01/class/ANGULARJS/index.html" },
+            { "name": "index2.html", "path": "awt01/class/ANGULARJS/index2.html" },
+            { "name": "index3.html", "path": "awt01/class/ANGULARJS/index3.html" }
           ]
         },
         {
