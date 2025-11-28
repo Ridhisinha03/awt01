@@ -1,4 +1,14 @@
-console.log("D3 Lab Loaded");
+function loadData() {
+    fetch("/data")
+        .then(res => res.json())
+        .then(data => {
+            const list = document.getElementById("output");
+            list.innerHTML = "";
 
-// Basic SVG reference
-const svg = d3.select("#chart");
+            data.forEach(row => {
+                const li = document.createElement("li");
+                li.textContent = `${row.name} - ${row.age} - ${row.city}`;
+                list.appendChild(li);
+            });
+        });
+}
