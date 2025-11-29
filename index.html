@@ -3,44 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>AWT01</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <link rel="stylesheet" href="s.css">
-</head>
-<body ng-controller="MainCtrl">
-    <h1>AWT01</h1>
-<div class="folder" ng-repeat="folder in data.Class">
-    <h2>{{folder.name}}</h2>
 
-    <!-- If the folder has subfolders (Class) -->
-    <div class="subfolder" ng-repeat="sub in folder.subfolders">
-        <h3>{{sub.name}}</h3>
-        <ul>
-            <li ng-repeat="file in sub.files">
-                <a ng-href="{{file.path}}">{{file.name}}</a>
-            </li>
-        </ul>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <!-- Optional CSS file (your s.css) -->
+    <link rel="stylesheet" href="s.css">
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .folder, .subfolder {
+            margin-bottom: 20px;
+        }
+        h2 {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        h3 {
+            margin-top: 10px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 15px;
+        }
+        li {
+            margin: 6px 0;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <h1>AWT01 – LAB Experiments</h1>
+
+    <!-- Loop through main folder -->
+    <div class="folder" ng-repeat="folder in data.Class">
+
+        <h2>{{ folder.name }}</h2>
+
+        <!-- Loop through experiments -->
+        <div class="subfolder" ng-repeat="sub in folder.subfolders">
+            <h3>{{ sub.name }}</h3>
+
+            <ul>
+                <li ng-repeat="file in sub.files">
+                    <a ng-href="{{ file.path }}" target="_blank">{{ file.name }}</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
-    <!-- If the folder has direct files (Lab Experiments) -->
-    <ul ng-if="folder.files">
-        <li ng-repeat="file in folder.files">
-            <a ng-href="{{file.path}}">{{file.name}}</a>
-        </li>
-    </ul>
-</div>
-
-
+    <!-- AngularJS Controller -->
     <script>
         angular.module('myApp', [])
-            .controller('MainCtrl', function($scope, $http) {
-                $http.get('data.json')
-                    .then(function(response) {
-                        $scope.data = response.data;
-                    })
-                    .catch(function(error) {
-                        console.error("Error fetching data:", error);
-                    });
+        .controller('MainCtrl', function($scope, $http) {
+
+            $http.get('data.json')
+            .then(function(response) {
+                $scope.data = response.data;
+            })
+            .catch(function(err) {
+                console.error("Error loading JSON:", err);
             });
+
+        });
     </script>
+
 </body>
 </html>
