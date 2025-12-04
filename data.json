@@ -1,40 +1,40 @@
 {
   "Class": [
     {
-      "name": "LAB",
+      "name": "lab",
       "subfolders": [
         {
-          "name": "Experiment 1",
+          "name": "experiment1",
           "files": [
             { "name": "index.html", "path": "lab/experiment1/index.html" },
-            { "name": "D1.js", "path": "lab/experiment1/D1.js" },
+            { "name": "d1.js", "path": "lab/experiment1/d1.js" },
             { "name": "s.css", "path": "lab/experiment1/s.css" }
           ]
         },
         {
-          "name": "Experiment 2",
+          "name": "experiment2",
           "files": [
             { "name": "index.html", "path": "lab/experiment2/index.html" },
-            { "name": "D2.js", "path": "lab/experiment2/D2.js" },
+            { "name": "d2.js", "path": "lab/experiment2/d2.js" },
             { "name": "s.css", "path": "lab/experiment2/s.css" }
           ]
         },
         {
-          "name": "Experiment 3",
+          "name": "experiment3",
           "files": [
             { "name": "index.html", "path": "lab/experiment3/index.html" },
             { "name": "app.js", "path": "lab/experiment3/app.js" }
           ]
         },
         {
-          "name": "Experiment 4",
+          "name": "experiment4",
           "files": [
             { "name": "bill.html", "path": "lab/experiment4/bill.html" },
             { "name": "form.html", "path": "lab/experiment4/form.html" }
           ]
         },
         {
-          "name": "Experiment 5",
+          "name": "experiment5",
           "files": [
             { "name": "index.html", "path": "lab/experiment5/index.html" },
             { "name": "nodetest.js", "path": "lab/experiment5/nodetest.js" },
@@ -42,18 +42,18 @@
           ]
         },
         {
-          "name": "Experiment 6",
+          "name": "experiment6",
           "files": [
             { "name": "package.json", "path": "lab/experiment6/package.json" },
             { "name": "server.js", "path": "lab/experiment6/server.js" }
           ]
         },
         {
-          "name": "Experiment 7",
+          "name": "experiment7",
           "files": [
             {
-              "name": "cokkie-example.js",
-              "path": "lab/experiment7/source/cokkie-example.js"
+              "name": "cookie-example.js",
+              "path": "lab/experiment7/source/cookie-example.js"
             },
             {
               "name": "session-example.js",
@@ -62,7 +62,7 @@
           ]
         },
         {
-          "name": "Experiment 8 – Shopping App",
+          "name": "experiment8_shopping_app",
           "files": [
             { "name": "item.html", "path": "lab/experiment8/shopping-app/item.html" },
             { "name": "item.js", "path": "lab/experiment8/shopping-app/item.js" },
@@ -73,9 +73,8 @@
           ]
         },
         {
-          "name": "Experiment 8 – Student App",
+          "name": "experiment8_student_app",
           "files": [
-            { "name": "index.html", "path": "lab/experiment8/student-app/index.html" },
             { "name": "student.html", "path": "lab/experiment8/student-app/student.html" },
             { "name": "student.js", "path": "lab/experiment8/student-app/student.js" },
             { "name": "connect.js", "path": "lab/experiment8/student-app/connect.js" },
@@ -85,7 +84,7 @@
           ]
         },
         {
-          "name": "Experiment 10",
+          "name": "experiment10",
           "files": [
             { "name": "index.html", "path": "lab/experiment10/public/index.html" },
             { "name": "script.js", "path": "lab/experiment10/public/script.js" },
